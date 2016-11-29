@@ -1,0 +1,19 @@
+{
+  "name": "require-template",
+  "version": "1.0.4",
+  "description": "Browserify transform used to require html template in js file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "browserify",
+    "html",
+    "teamplate"
+  ],
+  "author": "monjer",
+  "license": "ISC",
+  "dependencies": {
+    "through": "^2.3.8"
+  }
+}
