@@ -48,31 +48,29 @@ module.exports = function(file, opts) {
 
   function end() {
     var content, src, i = 0,
-      str, template = {};
+      template = {} , fragments;
     try {
       content = fs.readFileSync(file, 'utf-8');
-      content = removeBlankLine(content);
-      content = strEscap(content.trim());
+      content = removeBlankLine(content.trim());
 
-      str = content;
-
-      content = content.split(divider)
-      content.shift();
-      var length = content.length;
+      fragments = content.split(divider)
+      fragments.shift();
+      var length = fragments.length;
       if (length > 0) {
         while (i < length) {
-          template[content[i]] = removeBlankLine(content[i + 1]);
+          template[fragments[i]] = removeBlankLine(fragments[i + 1].trim());
           i += 2;
         }
-        src = stringify(template, true);
+        content = stringify(template, true);
       } else {
-        src = stringify(str, false);
+        content = strEscap(content.trim());
+        content = stringify(content, false);
       }
 
     } catch (error) {
       this.emit('error', error);
     }
-    this.queue(src);
+    this.queue(content);
     this.queue(null);
   }
 

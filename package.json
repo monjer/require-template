@@ -1,6 +1,6 @@
 {
   "name": "require-template",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Browserify transform used to require html template in js file.",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "html",
     "teamplate"
   ],
+  "homepage":"https://github.com/monjer/require-template",
   "author": "monjer",
   "license": "ISC",
   "dependencies": {
